@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="touming">#00000000</color>
+    <color name="transparent_00">#00000000</color>
+    <color name="transparent">#a3000000</color>
+    <color name="black">#000000</color>
+    <color name="white">#ffffff</color>
+    <color name="t_titlebar_bg">#e6e6e6</color>
+    <color name="text_pink">#f86973</color>
+    <color name="color_pink">#f86973</color>
+    <color name="color_ebebeb">#ebebeb</color>
+    <color name="title_shadow">#A0CCCCCC</color>
+    <color name="gray99">#999999</color>
+    <color name="color_B7B7B7">#B7B7B7</color>
+    <color name="blue">#600E5CAE</color>
+    <color name="pull_vercode">#4589E1</color>
+    <color name="graylight">#ddd</color>
+    <color name="edit_hint_color">#D8DDE2</color>
+
+    <color name="line_divider_default">#ebebeb</color>
+    <color name="rect_divider_default">#fafafa</color>
+    <color name="color_f9f9ff">#F9F9FF</color>
+    <color name="color_333333">#333333</color>
+    <color name="color_666666">#666666</color>
+    <color name="color_ff7b7b">#ff7b7b</color>
+    <color name="color_e6e6e6">#E6E6E6</color>
+
+</resources>

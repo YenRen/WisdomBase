@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/bg_wisdom"
+    tools:context=".ui.base.TitleWithHeadBgActivity"
+    android:fitsSystemWindows="true">
+
+    <RelativeLayout
+        android:id="@+id/titleview"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_height"
+        android:background="@color/transparent_00">
+
+
+        <RelativeLayout
+            android:id="@+id/imv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dimen_10dp"
+            android:onClick="onBackClick"
+            android:layout_centerVertical="true">
+
+            <ImageView
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/back_button" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/dimen_20dp"
+            android:textColor="@color/color_333333"
+            android:layout_centerInParent="true"/>
+
+    </RelativeLayout>
+
+
+    <com.hnxx.wisdombase.ui.widget.swiperfresh.SwipeRefreshView
+        android:layout_below="@+id/titleview"
+        android:id="@+id/swiperefreshview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/transparent_00">
+<!--        <LinearLayout-->
+<!--            android:layout_below="@+id/titleview"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:orientation="vertical"-->
+<!--            android:background="@color/transparent_00">-->
+
+<!--            <View-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="@dimen/dimen_20dp"-->
+<!--                android:background="@drawable/translation_bg" />-->
+
+<!--            <FrameLayout-->
+<!--                android:id="@+id/activity_base_content"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:background="@color/white">-->
+<!--            </FrameLayout>-->
+<!--        </LinearLayout>-->
+
+    </com.hnxx.wisdombase.ui.widget.swiperfresh.SwipeRefreshView>
+
+</RelativeLayout>

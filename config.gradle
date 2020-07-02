@@ -1,0 +1,44 @@
+ext {
+    /* ----------------------定义系统相关变量值----------------------------*/
+    support = SUPPORT_LIBRARY
+
+    /* ----------------------定义plugins区相关变量值----------------------------*/
+    plugins = [
+            application: 'com.android.application',
+            library    : 'com.android.library',
+//            maven      : 'com.github.dcendents.android-maven',
+//            bintray    : 'com.jfrog.bintray'
+    ]
+
+    /* ----------------------定义android区相关变量值----------------------------*/
+    android = [
+            versionCode      : VERSION_CODE as int,
+            versionName      : VERSION_NAME,
+            compileSdkVersion: ANDROID_COMPILE_SDK_VERSION as int,
+            buildToolsVersion: ANDROID_BUILD_TOOLS_VERSION,
+            minSdkVersion    : ANDROID_BUILD_MIN_SDK_VERSION,
+            targetSdkVersion : ANDROID_BUILD_TARGET_SDK_VERSION,
+    ]
+    dependencies = [
+            /* 单元测试*/
+            junit       : 'junit:junit:4.12',
+            junittest   : 'androidx.test.ext:junit:1.1.1',
+            espresso    : 'androidx.test.espresso:espresso-core:3.2.0',
+            design      : 'com.google.android.material:material:1.0.0',
+            cardview    : 'androidx.cardview:cardview:1.0.0',
+            /* support库*/
+            recyclerview: 'androidx.recyclerview:recyclerview:' + support,
+            appcompat    : 'androidx.appcompat:appcompat:' + support,
+            /* android分dex，避免方法数超过限制异常*/
+            multidex    : 'androidx.multidex:multidex:2.0.0',
+            /* rx*/
+            rxjava      : 'io.reactivex.rxjava2:rxjava:2.2.0',
+            rxandroid   : 'io.reactivex.rxjava2:rxandroid:2.0.2',
+            /* gson解析json数据*/
+            gson        : 'com.google.code.gson:gson:2.8.5',
+
+    ]
+
+    /* ----------------------定义dependencies区相关变量值----------------------------*/
+
+}

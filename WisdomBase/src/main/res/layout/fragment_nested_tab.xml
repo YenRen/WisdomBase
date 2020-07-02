@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:elevation="0dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            app:contentInsetEnd="0dp"
+            app:contentInsetStart="0dp"
+            app:layout_scrollFlags="scroll|enterAlways|snap">
+
+            <!--128优化  为了让标题居中-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+            <RelativeLayout
+                android:id="@+id/commontitlebar_llyt_titlebar"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:paddingBottom="11dp"
+                android:paddingTop="11dp">
+
+                <TextView
+                    android:id="@+id/title_tv"
+                    style="@style/textstyle_titlebar"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center"
+                    android:paddingLeft="80dp"
+                    android:paddingRight="80dp"
+                    android:text="标题" />
+
+
+                <ImageView
+                    android:id="@+id/back_iv"
+                    android:layout_width="34dp"
+                    android:layout_height="24dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="7dp"
+                    android:layout_marginRight="13.3dp"
+                    android:clickable="true"
+                    android:scaleType="center"
+                    android:src="@drawable/back_button" />
+
+                <ImageView
+                    android:id="@+id/iv_search"
+                    android:layout_width="@dimen/iconsize_titlebar"
+                    android:layout_height="@dimen/iconsize_titlebar"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="13.3dp"
+                    android:layout_marginRight="13.3dp"
+                    android:background="@drawable/btn_search_selector"
+                    android:clickable="true"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/common_title_bar_rightmenu_ll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/iconsize_titlebar"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" />
+
+                <TextView
+                    android:id="@+id/video_tv_all"
+                    style="@style/textstyle_titlebar"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="全部"
+                    android:textSize="@dimen/dimen_16sp"
+                    android:visibility="gone" />
+
+
+                <RelativeLayout
+                    android:id="@+id/layout_expire_remind"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="15dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/tv_expire_remind"
+                        style="@style/textstyle_titlebar"
+                        android:layout_centerVertical="true"
+                        android:text="到期提醒"
+                        android:layout_marginTop="2dp"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:id="@+id/iv_expire_remind"
+                        android:layout_width="6dp"
+                        android:layout_height="6dp"
+                        android:layout_marginLeft="3dp"
+                        android:layout_toRightOf="@+id/tv_expire_remind"
+                        android:src="@mipmap/expire_remind" />
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+                <View
+                    android:id="@+id/title_blew_line"
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="#E5E5E5"
+                    android:layout_below="@+id/commontitlebar_llyt_titlebar"
+                    android:visibility="gone"/>
+
+            </LinearLayout>
+
+
+        </androidx.appcompat.widget.Toolbar>
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_tab_height"
+            android:layout_marginBottom="2dp"
+            android:gravity="center_vertical">
+
+            <FrameLayout
+                android:id="@+id/tab_left_container"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:visibility="gone" />
+
+            <com.hnxx.wisdombase.ui.widget.sliding.slidingtab.SlidingTabLayout
+                android:id="@+id/tf_tab_layout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/common_tab_height"
+                android:layout_centerInParent="true"
+                app:tl_indicator_color="@color/pull_vercode"
+                app:tl_indicator_corner_radius="1.5dp"
+                app:tl_indicator_height="3dp"
+                app:tl_indicator_width="15dp"
+                app:tl_indicator_margin_bottom="5dp"
+                app:tl_textSelectColor="@color/pull_vercode"
+                app:tl_textUnselectColor="@color/black" />
+
+            <ImageView
+                android:id="@+id/divider_line"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_toRightOf="@+id/tf_tab_layout"
+                android:background="@mipmap/icon_tab_shadow"
+                android:layout_marginLeft="-5dp"
+                android:visibility="gone"/>
+
+            <FrameLayout
+                android:id="@+id/tab_right_container"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <com.hnxx.wisdombase.ui.widget.viewpager.ZViewPager
+            android:id="@+id/tf_view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <View
+            android:id="@+id/title_line"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="@drawable/shape_title_line" />
+
+    </FrameLayout>
+
+
+
+        <LinearLayout
+            android:id="@+id/hot_area"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_50dp"
+                android:background="#00000000">
+
+            </RelativeLayout>
+<!--            <RelativeLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:background="@color/mask_color">-->
+<!--                <include-->
+<!--                    layout="@layout/choose_hot_fm_view"/>-->
+<!--            </RelativeLayout>-->
+
+        </LinearLayout>
+
+
+    <!--底部-->
+    <FrameLayout
+        android:id="@+id/bottomLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:visibility="gone"/>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

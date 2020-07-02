@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.hnxx.wisdombase.ui.widget.swiperfresh.MySwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/swp_main_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@color/transparent_00">
+
+            <View
+                android:id="@+id/divider"
+                style="@style/dividerstyle_default"
+                android:visibility="gone"/>
+
+            <com.hnxx.wisdomxiangxi.ui.widget.FzProgressBar
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/divider_line_height"
+                android:visibility="gone"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="#E8EAEC"
+                android:visibility="gone"/>
+
+            <FrameLayout
+                android:id="@+id/content_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </FrameLayout>
+
+
+        </LinearLayout>
+    </com.hnxx.wisdombase.ui.widget.swiperfresh.MySwipeRefreshLayout>
+</FrameLayout>

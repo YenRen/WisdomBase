@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        app:contentInsetEnd="0dp"
+        app:contentInsetStart="0dp">
+
+        <!--128优化  为了让标题居中-->
+        <RelativeLayout
+            android:id="@+id/commontitlebar_llyt_titlebar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:paddingBottom="@dimen/dimen_11dp"
+            android:paddingTop="@dimen/dimen_11dp">
+
+            <TextView
+                android:id="@+id/title_tv"
+                style="@style/textstyle_titlebar"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:paddingLeft="80dp"
+                android:paddingRight="80dp"
+                android:text="标题"/>
+
+
+            <ImageView
+                android:id="@+id/back_iv"
+                android:layout_width="34dp"
+                android:layout_height="24dp"
+                android:layout_marginLeft="7dp"
+                android:layout_marginRight="@dimen/dimen_13dp"
+                android:layout_centerVertical="true"
+                android:clickable="true"
+                android:onClick="onBackClick"
+                android:scaleType="center"
+                android:src="@drawable/back_button"/>
+
+            <ImageView
+                android:id="@+id/iv_search"
+                android:layout_width="@dimen/dimen_24dp"
+                android:layout_height="@dimen/dimen_24dp"
+                android:layout_marginLeft="@dimen/dimen_13dp"
+                android:layout_marginRight="@dimen/dimen_13dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/btn_search_selector"
+                android:clickable="true"
+                android:visibility="gone"/>
+
+            <LinearLayout
+                android:id="@+id/common_title_bar_rightmenu_ll"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dimen_24dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"/>
+
+            <TextView
+                android:id="@+id/video_tv_all"
+                style="@style/textstyle_titlebar"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:text="全部"
+                android:textSize="@dimen/dimen_16sp"
+                android:visibility="gone"/>
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <View style="@style/dividerstyle_rect" />
+
+
+</LinearLayout>

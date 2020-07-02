@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="dimen_1dp">1.0dp</dimen>
+    <dimen name="dimen_2dp">2.0dp</dimen>
+    <dimen name="dimen_4dp">4.0dp</dimen>
+    <dimen name="dimen_5dp">5.0dp</dimen>
+    <dimen name="dimen_6dp">6.0dp</dimen>
+    <dimen name="dimen_7dp">7.0dp</dimen>
+    <dimen name="dimen_8dp">8.0dp</dimen>
+    <dimen name="dimen_9dp">9.0dp</dimen>
+    <dimen name="dimen_10dp">10.0dp</dimen>
+    <dimen name="dimen_11dp">11.0dp</dimen>
+    <dimen name="dimen_12dp">12.0dp</dimen>
+    <dimen name="dimen_13dp">13.0dp</dimen>
+    <dimen name="dimen_14dp">14.0dp</dimen>
+    <dimen name="dimen_15dp">15.0dp</dimen>
+    <dimen name="dimen_16dp">16.0dp</dimen>
+    <dimen name="dimen_18dp">18.0dp</dimen>
+    <dimen name="dimen_20dp">20.0dp</dimen>
+    <dimen name="dimen_24dp">24.0dp</dimen>
+    <dimen name="dimen_25dp">25.0dp</dimen>
+
+    <dimen name="dimen_28dp">28.0dp</dimen>
+    <dimen name="dimen_30dp">30.0dp</dimen>
+    <dimen name="dimen_32dp">32.0dp</dimen>
+    <dimen name="dimen_36dp">36.0dp</dimen>
+    <dimen name="dimen_40dp">40.0dp</dimen>
+    <dimen name="dimen_45dp">45.0dp</dimen>
+    <dimen name="dimen_48dp">48.0dp</dimen>
+    <dimen name="dimen_50dp">50.0dp</dimen>
+    <dimen name="dimen_56dp">56.0dp</dimen>
+    <dimen name="dimen_60dp">60.0dp</dimen>
+    <dimen name="dimen_80dp">80.0dp</dimen>
+    <dimen name="dimen_100dp">100.0dp</dimen>
+    <dimen name="dimen_120dp">120.0dp</dimen>
+    <dimen name="dimen_128dp">128.0dp</dimen>
+    <dimen name="dimen_200dp">200.0dp</dimen>
+
+
+    <dimen name="dimen_8sp">8.0sp</dimen>
+    <dimen name="dimen_9sp">9.0sp</dimen>
+    <dimen name="dimen_10sp">10.0sp</dimen>
+    <dimen name="dimen_11sp">11.0sp</dimen>
+    <dimen name="dimen_12sp">12.0sp</dimen>
+    <dimen name="dimen_13sp">13.0sp</dimen>
+    <dimen name="dimen_14sp">14.0sp</dimen>
+    <dimen name="dimen_15sp">15.0sp</dimen>
+    <dimen name="dimen_16sp">16.0sp</dimen>
+    <dimen name="dimen_17sp">17.0sp</dimen>
+    <dimen name="dimen_18sp">18.0sp</dimen>
+    <dimen name="dimen_19sp">19.0sp</dimen>
+    <dimen name="dimen_20sp">20.0sp</dimen>
+
+    <dimen name="person_edit_item_height">52dp</dimen>
+    <dimen name="person_edit_item_margin">15dp</dimen>
+    <dimen name="divider_line_height">1px</dimen>
+    <dimen name="divider_rect_height">9.0dp</dimen>
+    <dimen name="common_tab_height2">-48dp</dimen>
+
+
+    <dimen name="custom_width">70dp</dimen>
+    <dimen name="custom_height">40dp</dimen>
+
+    <dimen name="iconsize_titlebar">24dp</dimen>
+    <dimen name="toolbar_height">48dp</dimen>
+
+    <dimen name="common_tab_height">40dp</dimen>
+
+    <dimen name="common_padding_30px">13.3dp</dimen>
+</resources>

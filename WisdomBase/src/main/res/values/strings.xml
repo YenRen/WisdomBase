@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">WisdomBase</string>
+
+    <!--6.0动态申请权限 -->
+    <string name="permission_get_accounts_hint">没有帐户列表权限，无法开启这个功能，请开启权限</string>
+    <string name="permission_read_phone_hint">没有手机电话权限，无法开启这个功能，请开启手机电话权限</string>
+    <string name="permission_call_phone_hint">没有手机电话权限，无法开启这个功能，请开启手机电话权限</string>
+    <string name="permission_camera_hint">拍照需要您授予相机权限，请前往设置开启</string>
+    <string name="permission_access_fine_location_hint">没有位置权限，无法开启这个功能，请开启位置权限</string>
+    <string name="permission_access_coarse_location_hint">没有位置权限，无法开启这个功能，请开启位置权限</string>
+    <string name="permission_read_external_hint">没有存储权限，无法开启这个功能，请开启存储权限</string>
+    <string name="permission_white_external_hint">没有存储权限，无法开启这个功能，请开启存储权限</string>
+    <string name="permission_recode_audio_hint">留声机需要您授予录音权限，请前往设置开启</string>
+    <string name="permission_send_sms_hint">一键登录需要您授予发送短信权限，请前往设置开启</string>
+    <string name="permission_read_contact_hint">赠送书籍需要您授予通讯录权限，请前往设置开启</string>
+</resources>

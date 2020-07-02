@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="SwipeBackLayout">
+        <item name="edge_size">50dip</item>
+        <item name="shadow_left">@mipmap/shadow_left</item>
+        <item name="shadow_right">@mipmap/shadow_right</item>
+        <item name="shadow_bottom">@mipmap/shadow_bottom</item>
+    </style>
+
+    <style name="UpdateAnimSlide" parent="@android:style/Animation">
+        <item name="android:activityOpenEnterAnimation">@anim/push_alpha_in</item>
+        <item name="android:activityOpenExitAnimation">@null</item>
+        <item name="android:activityCloseEnterAnimation">@null</item>
+        <item name="android:activityCloseExitAnimation">@anim/push_alpha_out</item>
+    </style>
+
+    <style name="TranslucentNoAnim" parent="@android:style/Animation">
+        <item name="android:activityOpenEnterAnimation">@null</item>
+        <item name="android:activityOpenExitAnimation">@null</item>
+        <item name="android:activityCloseEnterAnimation">@null</item>
+        <item name="android:activityCloseExitAnimation">@null</item>
+    </style>
+    
+    <style name="TranslucentNoTitlebarTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowAnimationStyle">@style/TranslucentNoAnim</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryDark">@color/white</item>
+        <item name="colorAccent">@color/text_pink</item>
+    </style>
+
+    <style name="NoTranslucentBaseTheme" parent="@style/AppTheme">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/color_ebebeb</item>
+        <item name="android:windowAnimationStyle">@style/UpdateAnimSlide</item>
+        <item name="android:dropDownListViewStyle">@style/widget_dropdownlistview</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:colorBackgroundCacheHint">@color/color_ebebeb</item>
+    </style>
+
+    <style name="NoTranslucentTheme" parent="@style/NoTranslucentBaseTheme">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowAnimationStyle">@style/UpdateAnimSlide</item>
+        <item name="android:dropDownListViewStyle">@style/widget_dropdownlistview</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <style name="AppThemeAppCompat" parent="@style/AppTheme">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowAnimationStyle">@style/UpdateAnimSlide</item>
+        <item name="android:dropDownListViewStyle">@style/widget_dropdownlistview</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <style name="TranslucentTheme" parent="@style/AppTheme">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowAnimationStyle">@style/UpdateAnimSlide</item>
+        <item name="android:dropDownListViewStyle">@style/widget_dropdownlistview</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <style name="OnekeyloginTheme" parent="@style/AppTheme">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@android:color/black</item>
+        <item name="android:windowAnimationStyle">@style/UpdateAnimSlide</item>
+        <item name="android:dropDownListViewStyle">@style/widget_dropdownlistview</item>
+    </style>
+
+    <style name="TranslucentThemeZWoReader" parent="@style/TranslucentTheme">
+        <item name="android:windowAnimationStyle">@null</item>
+    </style>
+
+    <style name="TranslucentBaseTheme" parent="@style/AppTheme">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowAnimationStyle">@style/UpdateAnimSlide</item>
+        <item name="android:dropDownListViewStyle">@style/widget_dropdownlistview</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:colorBackgroundCacheHint">@android:color/transparent</item>
+    </style>
+
+    <style name="TranslucentActivityTheme" parent="@style/AppTheme">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <style name="TransparentActivityTheme" parent="@style/AppTheme">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <style name="NoTranslucentMainTheme" parent="@style/TranslucentBaseTheme">
+        <item name="android:windowIsTranslucent">false</item>
+    </style>
+
+    <style name="NoTitle" parent="android:Theme">
+        <item name="android:windowNoTitle">true</item>
+    </style>
+</resources>

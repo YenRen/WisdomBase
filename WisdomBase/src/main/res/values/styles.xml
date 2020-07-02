@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="QuickStartStyle" parent="AppTheme">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@mipmap/welcome</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+
+    <style name="WelcomeLoadingPage1" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+
+
+    <style name="WelcomeLoadingPage2" parent="android:Theme.Holo.Light.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+<!--        <item name="android:windowBackground">@color/transparent_00</item>-->
+    </style>
+
+    <style name="customdialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">
+            @android:style/Animation.Dialog
+        </item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan
+        </item>
+        <item name="android:windowIsTranslucent">false</item>
+        <!--半透明-->
+        <item name="android:windowNoTitle">true</item>
+        <!--无标题-->
+        <item name="android:windowBackground">@color/touming</item>
+        <!--背景透明-->
+        <item name="android:backgroundDimEnabled">false</item>
+        <!--模糊-->
+    </style>
+
+    <style name="customprogressdialog" parent="@style/customdialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="widget_dropdownlistview" parent="android:style/Widget.ListView.DropDown">
+        <item name="android:scrollbars">none</item>
+        <!--         <item name="android:divider">@null</item> -->
+        <item name="android:padding">10dp</item>
+        <item name="android:shadowColor">@android:color/white</item>
+        <item name="android:background">@null</item>
+        <item name="android:fadingEdgeLength">0dp</item>
+    </style>
+
+    <style name="textstyle_titlebar">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/dimen_19sp</item>
+        <item name="android:textColor">#010000</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="dividerstyle_rect">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/divider_rect_height</item>
+        <item name="android:background">@drawable/divider_rect_default</item>
+    </style>
+
+    <style name="confirm_dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:backgroundDimAmount">0.4</item>
+    </style>
+
+    <style name="dividerstyle_default">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/divider_line_height</item>
+        <item name="android:background">@color/line_divider_default</item>
+    </style>
+
+    <style name="dividerstyle_height_5dp">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dimen_5dp</item>
+        <item name="android:background">@color/line_divider_default</item>
+    </style>
+
+    <style name="dividerstyle_height_10dp">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dimen_10dp</item>
+        <item name="android:background">@color/color_e6e6e6</item>
+    </style>
+</resources>
