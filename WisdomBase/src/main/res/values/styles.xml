@@ -99,4 +99,17 @@
         <item name="android:layout_height">@dimen/dimen_10dp</item>
         <item name="android:background">@color/color_e6e6e6</item>
     </style>
+
+
+    <declare-styleable name="CustomButtonView">
+        <attr name="mBackground" format="reference|color" />
+        <attr name="mTextColor" format="reference|color" />
+        <attr name="mText" format="string" />
+        <attr name="mTextSize" format="dimension" />
+        <attr name="mStyle" format="enum">
+            <enum name="normal" value="0" />
+            <enum name="selected" value="1" />
+            <enum name="enabled" value="2" />
+        </attr>
+    </declare-styleable>
 </resources>
