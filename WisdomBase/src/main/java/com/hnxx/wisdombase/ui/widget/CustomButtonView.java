@@ -50,7 +50,7 @@ public class CustomButtonView extends LinearLayout {
             style = a.getInt(R.styleable.CustomButtonView_mStyle, 0);
         }
         setBackgroundResource(backgroundResourceId);
-        setGravity(Gravity.CENTER_HORIZONTAL);
+        setGravity(Gravity.CENTER);
         textView = new TextView(context);
         textView.setGravity(Gravity.CENTER);
         addView(textView, new LayoutParams(LayoutParams.WRAP_CONTENT, (int) context.getResources().getDimension(R.dimen.dimen_45dp)));

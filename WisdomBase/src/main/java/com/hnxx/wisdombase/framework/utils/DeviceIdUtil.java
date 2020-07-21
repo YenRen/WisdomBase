@@ -115,11 +115,11 @@ public class DeviceIdUtil {
      * @param content
      * @return
      */
-    public static boolean writeToFileTxt(String fileName, String content) {
+    public static boolean writeToFileTxt(Context context,String fileName, String content) {
         FileOutputStream fileOutputStream;
         BufferedWriter bufferedWriter;
-        createDirectory(WisdomPath.instance().deviceIds);
-        File file = new File(WisdomPath.instance().deviceIds, fileName);
+        createDirectory(WisdomPath.instance(context.getApplicationContext()).deviceIds);
+        File file = new File(WisdomPath.instance(context.getApplicationContext()).deviceIds, fileName);
         try {
             file.createNewFile();
             fileOutputStream = new FileOutputStream(file);

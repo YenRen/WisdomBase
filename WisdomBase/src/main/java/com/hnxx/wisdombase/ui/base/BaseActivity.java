@@ -568,8 +568,8 @@ public abstract class BaseActivity extends AppCompatActivity
 
     @Override
     public int getSwipebackFlag() {
-        return SwipeBackLayout.EDGE_BOTTOM;
-//        return SwipeBackLayout.EDGE_LEFT;
+//        return SwipeBackLayout.EDGE_BOTTOM;
+        return SwipeBackLayout.EDGE_LEFT;
     }
 
     protected void startActivity(Class<?> clz) {

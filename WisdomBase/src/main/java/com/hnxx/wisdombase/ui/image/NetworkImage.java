@@ -1,6 +1,8 @@
 
 package com.hnxx.wisdombase.ui.image;
 
+import android.content.Context;
+
 import com.hnxx.wisdombase.framework.utils.LogUtil;
 import com.hnxx.wisdombase.ui.utils.CacheUtil;
 
@@ -19,11 +21,13 @@ public final class NetworkImage extends ZLSingleImage {
 	
 	private volatile boolean mySynchronized;
 	private static final int mCacheValidTime = 2592000;//30 * 24 * 60 * 60 缓存时间一个月，单位秒；为0时表示永久缓存;
+	private Context context;
 	// mimeType string MUST be interned
-	public NetworkImage(String url, String mimeType) {
+	public NetworkImage(Context context,String url, String mimeType) {
 		super(mimeType);
 		Url = url;
-		checkFileIsExist();
+		this.context = context;
+		checkFileIsExist(context);
 		
 	}
 	public NetworkImage(String url, String mimeType,boolean isCache) {
@@ -31,14 +35,14 @@ public final class NetworkImage extends ZLSingleImage {
 		
 		this.isCache = isCache;
 		Url = url;
-		checkFileIsExist();
+		checkFileIsExist(context);
 		
 		
 	}
     
-	public void clearCache() {
+	public void clearCache(Context context) {
         this.mySynchronized = false;
-        final File imageFile = new File(getFileName());
+        final File imageFile = new File(getFileName(context));
         if (imageFile.exists()) {
             imageFile.delete();
         }
@@ -47,32 +51,32 @@ public final class NetworkImage extends ZLSingleImage {
 	private static final String TOESCAPE = "<>:\"|?*\\";
 
 	// mimeType string MUST be interned
-	public  String makeImageFileName(String url, String mimeType) {	    	
-	    return CacheUtil.getCacheFileName(url, mimeType, "_");
+	public  String makeImageFileName(Context context,String url, String mimeType) {
+	    return CacheUtil.getCacheFileName(context,url, mimeType, "_");
 	}
 
-	public String getFileName() {
-		return makeImageFileName(Url, mimeType());
+	public String getFileName(Context context) {
+		return makeImageFileName(context,Url, mimeType());
 	}
 	
 	public boolean isSynchronized() {
 		return mySynchronized;
 	}
 
-	public void synchronize() {
-		synchronizeInternal(false);
+	public void synchronize(Context context) {
+		synchronizeInternal(context,false);
 	}
 
-	public void synchronizeFast() {
-		synchronizeInternal(true);
+	public void synchronizeFast(Context context) {
+		synchronizeInternal(context,true);
 	}
 
-	private final void synchronizeInternal(boolean doFast) {
+	private final void synchronizeInternal(Context context,boolean doFast) {
 		if (mySynchronized) {
 			return;
 		}
 		try {
-			final String fileName = getFileName();
+			final String fileName = getFileName(context);
 			if (fileName == null) {
 				// TODO: error message ???
 				return;
@@ -114,9 +118,9 @@ public final class NetworkImage extends ZLSingleImage {
 		}
 	}
 	
-	private final void checkFileIsExist(){
+	private final void checkFileIsExist(Context context){
 		
-		final String fileName = getFileName();
+		final String fileName = getFileName(context);
 		if (fileName == null) {
 			// TODO: error message ???
 			return;
@@ -162,7 +166,7 @@ public final class NetworkImage extends ZLSingleImage {
 		if (!mySynchronized) {
 			return null;
 		}
-		final String fileName = getFileName();
+		final String fileName = getFileName(context);
 		if (fileName == null) {
 			return null;
 		}
@@ -184,7 +188,7 @@ public final class NetworkImage extends ZLSingleImage {
 	
 	
 	public  byte [] byteDataImg(){
-		final String fileName = getFileName();
+		final String fileName = getFileName(context);
 		if (fileName == null) {
 			return null;
 		}

@@ -2,6 +2,7 @@
 
 package com.hnxx.wisdombase.ui.image;
 
+import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
 
@@ -68,7 +69,7 @@ public class NetworkImageHelp {
 
     private final CoverSynchronizedHandler myCoverSynchronizedHandler = new CoverSynchronizedHandler();
 
-	public void performCoverSynchronization(final NetworkImage image, Runnable finishRunnable) {
+	public void performCoverSynchronization(Context context,final NetworkImage image, Runnable finishRunnable) {
 		
 		if (myOnCoverSyncRunnables.containsKey(image.Url)) {
 			return;
@@ -80,7 +81,7 @@ public class NetworkImageHelp {
 		myOnCoverSyncRunnables.put(image.Url, runnables);
 		ThreadManager.getShortPool().execute((Runnable) () -> {
 			//起一个线程到到服务器去读取图片，读到之后将队列中的图片移除
-			image.synchronize();
+			image.synchronize(context);
 			myCoverSynchronizedHandler.fireMessage(image.Url);
 		});
 	}

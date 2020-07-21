@@ -70,7 +70,7 @@ public class BaseNativeWebView extends WebView {
         mWebSettings.setAppCacheEnabled(true);
         mWebSettings.setCacheMode(WebSettings.LOAD_DEFAULT);
         mWebSettings.setAppCacheMaxSize(4 * 1024 * 1024);
-        mWebSettings.setAppCachePath(WisdomPath.instance().webviewCachePath + "innerCache");
+        mWebSettings.setAppCachePath(WisdomPath.instance(getContext().getApplicationContext()).webviewCachePath + "innerCache");
         mWebSettings.setAllowFileAccess(true);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             mWebSettings.setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);

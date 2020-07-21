@@ -1,5 +1,7 @@
 package com.hnxx.wisdombase.ui.utils;
 
+import android.content.Context;
+
 import com.hnxx.wisdombase.framework.storage.WisdomPath;
 import com.hnxx.wisdombase.framework.utils.LogUtil;
 
@@ -12,13 +14,13 @@ public class CacheUtil
     private static HashMap<String, String> mCacheMap = new HashMap<String, String>();
     private static int mCacheFileNameMaxLength = 40;
 
-    public static String getCacheFileName(final String url, String mimeType)
+    public static String getCacheFileName(Context context,final String url, String mimeType)
     {
-        return getCacheFileName(url, mimeType, "/-");
+        return getCacheFileName(context,url, mimeType, "/-");
     }
 
-    public static String getCacheFileName(final String url, String mimeType,
-            String delimiters)
+    public static String getCacheFileName(Context context,final String url, String mimeType,
+                                          String delimiters)
     {
         String cachefilename = mCacheMap.get(url);
         if (null != cachefilename)
@@ -42,7 +44,7 @@ public class CacheUtil
             return null;
         }
 
-        cachefilename = WisdomPath.instance().picCachePath;
+        cachefilename = WisdomPath.instance(context).picCachePath;
         String urlpath = host + uri.getPath();
         String filename = "";
         try

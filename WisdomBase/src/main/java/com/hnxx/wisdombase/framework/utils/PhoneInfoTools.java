@@ -418,7 +418,7 @@ public class PhoneInfoTools {
                 if (!TextUtils.isEmpty(imei)) {
                     imei = imei.trim() + STR_IMEI_DEFAULT_VALUE;
                     imei = imei.substring(0, INT_IMEI_DEFAULT_LEN);
-                    DeviceIdUtil.writeToFileTxt(DeviceIdUtil.fileImei, imei);
+                    DeviceIdUtil.writeToFileTxt(context,DeviceIdUtil.fileImei, imei);
                 }
 
                 if (TextUtils.isEmpty(imei)) {

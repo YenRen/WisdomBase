@@ -1,5 +1,6 @@
 package com.hnxx.wisdombase.framework.utils;
 
+import android.content.Context;
 import android.graphics.Bitmap;
 
 import com.hnxx.wisdombase.ui.utils.MyImageUtil;
@@ -16,8 +17,8 @@ import java.io.IOException;
  */
 public class BitmapUtils {
     // 头像下载到本地
-    public static void saveImageToSdk(String imageUrl,String desPath,int width,int height) {
-        MyImageUtil.getBitmap((IImageLoadListener2) bitmap ->
+    public static void saveImageToSdk(Context context,String imageUrl, String desPath, int width, int height) {
+        MyImageUtil.getBitmap(context,(IImageLoadListener2) bitmap ->
                 saveBitmap(bitmap,desPath),
                 imageUrl,
                 width,

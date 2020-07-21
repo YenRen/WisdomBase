@@ -2,6 +2,7 @@ package com.hnxx.wisdombase.ui.utils;
 
 import android.app.Activity;
 import android.content.ContentResolver;
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
@@ -134,17 +135,17 @@ public class MyImageUtil {
         }
     }
 
-    public static Size getImageSize(final String imgUrl) {
+    public static Size getImageSize(Context context,final String imgUrl) {
         NetworkImage img = listNetworkImg.get(imgUrl);
         if (null == img) {
             if (imgUrl != null && !"".equals(imgUrl)) {
-                img = new NetworkImage(imgUrl, imgUrl.substring(imgUrl.lastIndexOf(".") + 1));
+                img = new NetworkImage(context,imgUrl, imgUrl.substring(imgUrl.lastIndexOf(".") + 1));
                 listNetworkImg.put(imgUrl, img);
             }
         }
         if (null != img) {
             if (img.isSynchronized()) {
-                ZLAndroidImageData data = ListImgCache.get(img.getFileName());
+                ZLAndroidImageData data = ListImgCache.get(img.getFileName(context));
                 if (null == data) {
                     data = ZLAndroidImageManager.getInstance().getImageData(img);
                 }
@@ -164,7 +165,7 @@ public class MyImageUtil {
         NetworkImage nwimage = listNetworkImg.get(imgUrl);
         if (nwimage == null) {
             if (imgUrl != null && !"".equals(imgUrl)) {
-                nwimage = new NetworkImage(imgUrl, imgUrl.substring(imgUrl.lastIndexOf(".") + 1));
+                nwimage = new NetworkImage(mActivity,imgUrl, imgUrl.substring(imgUrl.lastIndexOf(".") + 1));
                 listNetworkImg.put(imgUrl, nwimage);
             }
         }
@@ -201,7 +202,7 @@ public class MyImageUtil {
         NetworkImage nwimage = listNetworkImg.get(imgUrl);
         if (nwimage == null) {
             if (imgUrl != null && !"".equals(imgUrl)) {
-                nwimage = new NetworkImage(imgUrl, imgUrl.substring(imgUrl.lastIndexOf(".") + 1));
+                nwimage = new NetworkImage(mActivity,imgUrl, imgUrl.substring(imgUrl.lastIndexOf(".") + 1));
                 listNetworkImg.put(imgUrl, nwimage);
             }
         }
@@ -233,7 +234,7 @@ public class MyImageUtil {
 //                      //ZLAndroidImageData为弱引用，会自动回收
 //                      ListImgCache.put(img.getFileName(),new SoftReference<ZLAndroidImageData>(data));
 //                  }
-                    ZLAndroidImageData soft = ListImgCache.get(img.getFileName() + config.a);
+                    ZLAndroidImageData soft = ListImgCache.get(img.getFileName(mActivity) + config.a);
                     if (soft != null) {
                         data = soft;
                     }
@@ -241,7 +242,7 @@ public class MyImageUtil {
                         // data 将图片数据缓存到内存中
                         data = mgr.getImageData(img);
                         // ZLAndroidImageData为弱引用，会自动回收
-                        ListImgCache.put(img.getFileName() + config.a, data);
+                        ListImgCache.put(img.getFileName(mActivity) + config.a, data);
                     }
                 } else {
                     final Runnable runnable = new Runnable() {
@@ -257,7 +258,7 @@ public class MyImageUtil {
                     };
                     final NetworkImageHelp networkView = NetworkImageHelp.Instance();
                     if (!networkView.isCoverLoading(img.Url)) {
-                        networkView.performCoverSynchronization(img, runnable);
+                        networkView.performCoverSynchronization(mActivity,img, runnable);
                         myAwaitedCovers.add(img.Url);
                     } else if (!myAwaitedCovers.contains(img.Url)) {
                         networkView.addCoverSynchronizationRunnable(img.Url, runnable);
@@ -271,9 +272,9 @@ public class MyImageUtil {
                 coverBitmap = data.getBitmap(width, height, config.type);
                 if (null == coverBitmap) {
                     //图片加载失败，重新下载加载
-                    ListImgCache.remove(image.getFileName() + config.a);
+                    ListImgCache.remove(image.getFileName(mActivity) + config.a);
                     listNetworkImg.remove(image.Url);
-                    image.clearCache();
+                    image.clearCache(mActivity);
                     setAdImage(mActivity, l, coverView, image, width, height, config, isFirstload);
                 }
             } else {
@@ -333,28 +334,28 @@ public class MyImageUtil {
 
 
 
-    public static NetworkImage getImage(String imgUrl) {
+    public static NetworkImage getImage(Context context,String imgUrl) {
         NetworkImage nwimage = listNetworkImg.get(imgUrl);
         if (nwimage == null) {
             if (imgUrl != null && !"".equals(imgUrl)) {
-                nwimage = new NetworkImage(imgUrl, imgUrl.substring(imgUrl.lastIndexOf(".") + 1));
+                nwimage = new NetworkImage(context,imgUrl, imgUrl.substring(imgUrl.lastIndexOf(".") + 1));
                 listNetworkImg.put(imgUrl, nwimage);
             }
         }
         return nwimage;
     }
 
-    public static Bitmap getBitmap(String imgUrl) {
+    public static Bitmap getBitmap(Context context,String imgUrl) {
         NetworkImage img = listNetworkImg.get(imgUrl);
         if (null == img) {
             if (imgUrl != null && !"".equals(imgUrl)) {
-                img = new NetworkImage(imgUrl, imgUrl.substring(imgUrl.lastIndexOf(".") + 1));
+                img = new NetworkImage(context,imgUrl, imgUrl.substring(imgUrl.lastIndexOf(".") + 1));
                 listNetworkImg.put(imgUrl, img);
             }
         }
         if (null != img) {
             if (img.isSynchronized()) {
-                ZLAndroidImageData data = ListImgCache.get(img.getFileName());
+                ZLAndroidImageData data = ListImgCache.get(img.getFileName(context));
                 if (null == data) {
                     data = ZLAndroidImageManager.getInstance().getImageData(img);
                 }
@@ -408,12 +409,12 @@ public class MyImageUtil {
         void loadFinished(Bitmap bitmap);
     }
 
-    public static Bitmap getBitmap(final IImageLoadListener2 l, final String imgUrl,
+    public static Bitmap getBitmap(Context context,final IImageLoadListener2 l, final String imgUrl,
                                    final int width, final int height, final MyImageConfig config) {
         NetworkImage image = listNetworkImg.get(imgUrl);
         if (image == null) {
             if (imgUrl != null && !"".equals(imgUrl)) {
-                image = new NetworkImage(imgUrl, imgUrl.substring(imgUrl.lastIndexOf(".") + 1));
+                image = new NetworkImage(context,imgUrl, imgUrl.substring(imgUrl.lastIndexOf(".") + 1));
                 listNetworkImg.put(imgUrl, image);
             }
         }
@@ -427,30 +428,30 @@ public class MyImageUtil {
                 final NetworkImage img = (NetworkImage) cover;
                 if (img.isSynchronized()) {
                     LogUtil.d("ffff", "存在图片缓存" + width);
-                    ZLAndroidImageData soft = ListImgCache.get(img.getFileName() + config.a);
+                    ZLAndroidImageData soft = ListImgCache.get(img.getFileName(context) + config.a);
                     if (soft != null) {
-                        LogUtil.d("ffff", "缓存中取   大小：" + img.byteData().length + "  名称：" + img.getFileName() + config.a);
+                        LogUtil.d("ffff", "缓存中取   大小：" + img.byteData().length + "  名称：" + img.getFileName(context) + config.a);
                         data = soft;
                     }
                     if (null == data) {
                         if (img != null && img.byteData() != null) {
-                            LogUtil.d("ffff", "Byte数组中取   大小：" + img.byteData().length + img.byteData().length + "  名称：" + img.getFileName() + config.a);
+                            LogUtil.d("ffff", "Byte数组中取   大小：" + img.byteData().length + img.byteData().length + "  名称：" + img.getFileName(context) + config.a);
                             // data 将图片数据缓存到内存中
                             data = mgr.getImageData(img);
                             // ZLAndroidImageData为弱引用，会自动回收
-                            ListImgCache.put(img.getFileName() + config.a, data);
+                            ListImgCache.put(img.getFileName(context) + config.a, data);
                         }
                     }
                 } else {
                     final Runnable runnable = new Runnable() {
                         @Override
                         public void run() {
-                            getBitmap(l, imgUrl, width, height, config);
+                            getBitmap(context,l, imgUrl, width, height, config);
                         }
                     };
                     final NetworkImageHelp networkView = NetworkImageHelp.Instance();
                     if (!networkView.isCoverLoading(img.Url)) {
-                        networkView.performCoverSynchronization(img, runnable);
+                        networkView.performCoverSynchronization(context,img, runnable);
                         myAwaitedCovers.add(img.Url);
                     } else if (!myAwaitedCovers.contains(img.Url)) {
                         networkView.addCoverSynchronizationRunnable(img.Url, runnable);
@@ -465,10 +466,10 @@ public class MyImageUtil {
                 if (null == coverBitmap) {
                     LogUtil.i("ffff", "图片加载失败，重新下载加载" + width);
                     //图片加载失败，重新下载加载
-                    ListImgCache.remove(image.getFileName() + config.a);
+                    ListImgCache.remove(image.getFileName(context) + config.a);
                     listNetworkImg.remove(image.Url);
-                    image.clearCache();
-                    getBitmap(l, imgUrl, width, height, config);
+                    image.clearCache(context);
+                    getBitmap(context,l, imgUrl, width, height, config);
                 }
             }
         }

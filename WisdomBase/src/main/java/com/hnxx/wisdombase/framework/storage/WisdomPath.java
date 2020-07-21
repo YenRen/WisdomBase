@@ -53,20 +53,20 @@ public class WisdomPath {
 
     private static volatile WisdomPath mInstance;
 
-    public static WisdomPath instance() {
+    public static WisdomPath instance(Context context) {
         if (mInstance == null) {
             synchronized (WisdomPath.class) {
                 if (mInstance == null) {
-                    mInstance = new WisdomPath();
+                    mInstance = new WisdomPath(context);
                 }
             }
         }
         return mInstance;
     }
 
-    public WisdomPath(){
+    public WisdomPath(Context context){
         // 实例化时一次性全部初始化，提高二次访问性能
-        Context ctx = WisdomApplication.Instance().getApplicationContext();
+        Context ctx = context;
 
         isExistSdCard = Environment.getExternalStorageState()
                 .equals(Environment.MEDIA_MOUNTED);
